@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import ReactDOM from 'react-dom';
 
 const schoolNames = [
@@ -328,14 +326,14 @@ const schoolNames = [
 ];
 
 function Welcome() {
-  return(<h1>Welcome to NCAA Basketball Nation. At this site, you will see information about every NCAA University.</h1>);
+  return(<h1>March Madness</h1>);
 }
 
-class School extends React.Component < {school: string, name:string, city:string, state:string}>{
+class School extends React.Component {
   render() {
     const oneSchool = this.props;
     return (
-    <div className="card">
+    <div>
         <h2>{oneSchool.school}</h2>
         <h2>Mascot: {oneSchool.name}</h2>
         <h2>Location: {oneSchool.city}, {oneSchool.state}</h2>
@@ -355,18 +353,14 @@ function SchoolList() {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Welcome/>
-        
-      </header>
-        
-          <SchoolList/>
-        
+    <div>
+      <Welcome/>
+      <SchoolList/>
     </div>
   );
 }
 
-
-
-export default App;
+ReactDOM.render(
+  <App/>,
+  document.getElementById('mountNode'),
+);
